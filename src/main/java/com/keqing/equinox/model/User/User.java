@@ -1,4 +1,6 @@
-package com.keqing.equinox.model;
+package com.keqing.equinox.model.User;
+
+import com.keqing.equinox.model.Account;
 
 public class User {
 
@@ -12,20 +14,20 @@ public class User {
     String authKey;
 
     String password;
-    Account accountLinked;
+    Account connectedAccount;
 
     public User(int id, String username, String password, Account accountLinked, UserDetails userDetails) {
 
         this.userId = id;
         this.username = username;
         this.password = password;
-        this.accountLinked = accountLinked;
+        this.connectedAccount = accountLinked;
         this.userDetails = userDetails;
 
     }
 
     public boolean isLinkedWithAccount(){
-        return accountLinked != null;
+        return connectedAccount != null;
     }
 
     public UserDetails getUserDetails() {
@@ -35,4 +37,19 @@ public class User {
     public void setAuthKey(String authKey) {
         this.authKey = authKey;
     }
+
+    public void connectAccount(Account accountLinked) {
+        this.connectedAccount = accountLinked;
+    }
+
+    public void disconnectAccount(){
+        connectedAccount = null;
+    }
+
+    public Account getConnectedAccount() {
+        return connectedAccount;
+    }
+
+
+
 }

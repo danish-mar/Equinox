@@ -1,4 +1,4 @@
-package com.keqing.equinox.model;
+package com.keqing.equinox.model.User;
 
 public class UserDetails {
 
@@ -48,7 +48,15 @@ public class UserDetails {
         this.address = address;
     }
 
-    String getFullName(){
+    public String getFullName(){
         return firstName + " " + lastName;
+    }
+
+    public UserDetails(String firstName, String lastName, String email, String phone, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
     }
 }
